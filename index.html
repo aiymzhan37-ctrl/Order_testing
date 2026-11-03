@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>САМЫЙ ДЕШЁВЫЙ МАРКЕТ; Товары по низким ценам</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #ddc5a2;
+            color: #301b28;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #301b28;
+            color: #ddc5a2;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .header table {
+            width: 100%;
+        }
+
+        .header-title {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .header-subtitle {
+            color: #ddc5a2;
+            font-size: 14px;
+        }
+
+        h2, h3 {
+            color: #301b28;
+        }
+
+        table {
+            border-color: #523634;
+        }
+
+        .catalog {
+            background-color: #ddc5a2;
+            border-collapse: collapse;
+        }
+
+        .catalog th {
+            background-color: #523634;
+            color: #ddc5a2;
+            padding: 12px;
+        }
+
+        .catalog td {
+            padding: 10px;
+            border: 1px solid #523634;
+        }
+
+        .catalog tr:nth-child(even) {
+            background-color: #ddc5a2;
+        }
+
+        .catalog tr:nth-child(odd) {
+            background-color: #f0e3ce;
+        }
+
+        .price {
+            color: #301b28;
+            font-weight: bold;
+        }
+
+        .side-table {
+            background-color: #ddc5a2;
+            border-collapse: collapse;
+        }
+
+        .side-table th,
+        .side-table .side-heading {
+            background-color: #523634;
+            color: #ddc5a2;
+            padding: 10px;
+        }
+
+        .side-table td {
+            border: 1px solid #523634;
+            padding: 10px;
+        }
+
+        button,
+        input[type="submit"] {
+            background-color: #523634;
+            color: #ddc5a2;
+            border: 1px solid #301b28;
+            padding: 9px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover,
+        input[type="submit"]:hover {
+            background-color: #301b28;
+        }
+
+        input,
+        select,
+        textarea {
+            background-color: #f0e3ce;
+            color: #301b28;
+            border: 1px solid #523634;
+            padding: 7px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #523634;
+        }
+
+        .footer {
+            color: #523634;
+            text-align: center;
+            font-size: 13px;
+            padding: 15px;
+        }
+
+        .page-layout {
+            width: 100%;
+            border-spacing: 10px;
+        }
+
+        .page-layout > tbody > tr > td {
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <table>
+            <tr>
+                <td>
+                    <span class="header-title">ЭКОНОМ С НАМИ</span><br>
+                    <span class="header-subtitle">
+                        — Дешёвые товары, как на WB!
+                    </span>
+                </td>
+                <td align="right">
+                    <b>
+                        🛒 Корзина: <span id="cart-count">0</span> шт. |
+                        Всего: <span id="cart-total">0</span> тг
+                    </b>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br><hr><br>
+
+    <table class="page-layout">
+        <tr>
+            <td width="70%">
+                <h2>Каталог дешёвых товаров</h2>
+
+                <table border="1" cellpadding="10" cellspacing="0"
+                       width="100%" class="catalog">
+                    <tr align="center">
+                        <th>Фото</th>
+                        <th>Название товара</th>
+                        <th>Описание</th>
+                        <th>Цена</th>
+                        <th>Действие</th>
+                    </tr>
+
+                    <tr align="center">
+                        <td>
+                            <img src="https://storage.vsemayki.ru/images/0/3/3669/3669505/previews/people_90_man_tshirt_sport_front_white_700.webp"
+                                 alt="Футболка" width="100" height="100">
+                        </td>
+                        <td><b>Базовая белая футболка</b></td>
+                        <td>100% полиэстер, универсальный размер</td>
+                        <td class="price">999 тг</td>
+                        <td>
+                            <button onclick="addToCart('Базовая белая футболка', 999)">
+                                + В корзину
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr align="center">
+                        <td>
+                            <img src="https://krasniykarandash.ru/upload/resize_cache/iblock/bc2/758_758_1/bc2a6972339ebda23b02da4895bc941a.jpg"
+                                 alt="Носки" width="100" height="100">
+                        </td>
+                        <td><b>Набор носков (10 пар)</b></td>
+                        <td>Прочные, повседневные</td>
+                        <td class="price">500 тг</td>
+                        <td>
+                            <button onclick="addToCart('Набор носков (10 пар)', 500)">
+                                + В корзину
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr align="center">
+                        <td>
+                            <img src="https://th.bing.com/th/id/OIP.5qV2gedGf9Ymb7E0zMvOtgHaHa?w=204&h=204&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                                 alt="Кружка" width="100" height="100">
+                        </td>
+                        <td><b>Кружка керамическая 50 мл</b></td>
+                        <td>Для чая, кофе и других напитков</td>
+                        <td class="price">200 тг</td>
+                        <td>
+                            <button onclick="addToCart('Кружка керамическая', 200)">
+                                + В корзину
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr align="center">
+                        <td>
+                            <img src="https://tse3.mm.bing.net/th/id/OIP.0uVKtyqB_q9v6S4dkdQ9tAHaHa?r=0&w=1000&h=1000&rs=1&pid=ImgDetMain&o=7&rm=3"
+                                 alt="Наушники" width="100" height="100">
+                        </td>
+                        <td><b>Проводные наушники 3.5 мм</b></td>
+                        <td>Хороший звук, встроенный микрофон</td>
+                        <td class="price">500 тг</td>
+                        <td>
+                            <button onclick="addToCart('Проводные наушники', 500)">
+                                + В корзину
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+
+            <td width="30%">
+                <table border="1" cellpadding="10" cellspacing="0"
+                       width="100%" class="side-table">
+                    <tr>
+                        <td class="side-heading">
+                            <h3 style="color: #ddc5a2;">Ваша корзина</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul id="cart-items">
+                                <li><i>Корзина пуста</i></li>
+                            </ul>
+                            <hr>
+                            <p>
+                                <b>Итого к оплате:
+                                    <span id="cart-total-side">0</span> тг
+                                </b>
+                            </p>
+                            <button onclick="clearCart()">Очистить корзину</button>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+
+                <table border="1" cellpadding="10" cellspacing="0"
+                       width="100%" class="side-table">
+                    <tr>
+                        <td class="side-heading">
+                            <h3 style="color: #ddc5a2;">Оформление заказа</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form onsubmit="checkout(event)">
+                                <label for="name">Ваше имя:</label><br>
+                                <input type="text" id="name" required><br><br>
+
+                                <label for="phone">Номер телефона:</label><br>
+                                <input type="tel" id="phone" required><br><br>
+
+                                <label for="pvz">Выберите пункт выдачи:</label><br>
+                                <select id="pvz" required>
+                                    <option value="">-- Выберите ПВЗ --</option>
+                                    <option value="pvz1">ПВЗ Кызылорда</option>
+                                    <option value="pvz2">ПВЗ Астана</option>
+                                    <option value="pvz3">ПВЗ Алматы</option>
+                                </select><br><br>
+
+                                <label for="comment">Комментарий к заказу:</label><br>
+                                <textarea id="comment" rows="3" cols="25"></textarea><br><br>
+
+                                <input type="submit" value="Оформить заказ">
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <br><hr><br>
+
+    <div class="footer">
+        © 2026 САМЫЙ ДЕШЁВЫЙ МАРКЕТ. Все права защищены мной.<br>
+        Доставка по всей стране. Самые низкие цены!
+    </div>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function addToCart(name, price) {
+            cart.push({ name: name, price: price });
+            total += price;
+            updateCartUI();
+        }
+
+        function clearCart() {
+            cart = [];
+            total = 0;
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            document.getElementById('cart-count').innerText = cart.length;
+            document.getElementById('cart-total').innerText = total;
+            document.getElementById('cart-total-side').innerText = total;
+
+            const cartList = document.getElementById('cart-items');
+            cartList.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartList.innerHTML = '<li><i>Корзина пуста</i></li>';
+            } else {
+                cart.forEach(function(item) {
+                    const li = document.createElement('li');
+                    li.innerText = item.name + ' - ' + item.price + ' тг';
+                    cartList.appendChild(li);
+                });
+            }
+        }
+
+        function checkout(event) {
+            event.preventDefault();
+
+            if (cart.length === 0) {
+                alert('Ваша корзина пуста! Добавьте хотя бы один товар.');
+                return;
+            }
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const pvz = document.getElementById('pvz')
+                .options[document.getElementById('pvz').selectedIndex].text;
+
+            alert('Спасибо за заказ, ' + name + '!\n' +
+                  'Вы заказали товаров на сумму: ' + total + ' тг\n' +
+                  'Пункт выдачи: ' + pvz + '\n' +
+                  'Мы свяжемся с вами по телефону: ' + phone);
+
+            clearCart();
+            document.querySelector('form').reset();
+        }
+    </script>
+
+</body>
+</html>
